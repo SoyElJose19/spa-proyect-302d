@@ -10,6 +10,7 @@ on:
 #(jobs:) = trabajos a ejecutar
 jobs: 
   front-build:
+
     runs-on: ubuntu-latest
 
     defaults:
@@ -28,3 +29,7 @@ jobs:
       
       - name: Construir la app
         run: npm run build
+  
+  #backend-build:
+  #frontend-test:
+  #backend-test:

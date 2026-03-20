@@ -10,11 +10,11 @@ on:
 #(jobs:) = trabajos a ejecutar
 jobs: 
   front-build:
-    runs-on: ubutu-latest
+    runs-on: ubuntu-latest
 
     defaults:
       run:
-        working-directory: fontend
+        working-directory: frontend
     steps:
       - name: Checkout repository (git clone)
         uses: actions/checkout@v4

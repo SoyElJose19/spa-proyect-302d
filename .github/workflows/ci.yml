@@ -1,0 +1,30 @@
+#Nombre del Flujo completo
+name: CI Pipeline
+
+#Acciones que ejecutan un archivo
+on:
+  pull_request:
+  push:
+    branches:
+      - develop
+#(jobs:) = trabajos a ejecutar
+jobs: 
+  front-build:
+    runs-on: ubutu-latest
+
+    defaults:
+      run:
+        working-directory: fontend
+    steps:
+      - name: Checkout repository (git clone)
+        uses: actions/checkout@v4
+
+      - name: Setup node (instalar node)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Instalar las dependencias
+        run: npm install
+      
+      - name: Construir la app
+        run: npm run build
